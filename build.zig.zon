@@ -10,11 +10,15 @@
             .url = "git+https://github.com/allyourcodebase/SDL#a544388ba6e2c862179045439f466385ba1984a8",
             .hash = "12208772d3b892948a9af38ef24e26dd4fbc98cb0378fff4afab5fc596a4d4cef350",
         },
+        .sdl_ttf = .{
+            .url = "git+https://github.com/libsdl-org/SDL_ttf#release-2.22.0",
+            .hash = "1220646027433d9ab9c1703ac73ad656fd6ff9d70a0ba1e30bf7480449da1efaeeef",
+        },
     },
     .paths = .{
         "build.zig",
         "build.zig.zon",
-        "SDL_ttf.c",
-        "SDL_ttf.h",
+        "LICENSE.txt",
+        "README.md",
     },
 }
