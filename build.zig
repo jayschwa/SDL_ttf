@@ -14,10 +14,16 @@ pub fn build(b: *std.Build) void {
     lib.addCSourceFile(.{ .file = upstream.path("SDL_ttf.c") });
     lib.linkLibC();
 
+    const harfbuzz_dep = b.dependency("harfbuzz", .{
+        .target = target,
+        .optimize = optimize,
+    });
+    lib.linkLibrary(harfbuzz_dep.artifact("harfbuzz"));
+    lib.defineCMacro("TTF_USE_HARFBUZZ", null);
+
     const freetype_dep = b.dependency("freetype", .{
         .target = target,
         .optimize = optimize,
-        .enable_brotli = false,
     });
     lib.linkLibrary(freetype_dep.artifact("freetype"));
 
